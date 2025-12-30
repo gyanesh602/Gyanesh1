@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Myfolio</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+
+    <img src="7.jpg" class="bg-img" alt="background">
+
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Admin ID" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <p id="error-msg" class="error-text">Invalid Credentials, try again!</p>
+            </form>
+            <a href="index.html" class="back-link">← Back to Website</a>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

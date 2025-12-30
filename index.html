@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Group</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Background Image Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            /* Yahan apni image ka naam likhein */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Isse background move nahi karega */
+            background-repeat: no-repeat;
+            color: white; /* Text color visible rakhne ke liye */
+        }
+
+        /* Navbar behavior fix */
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            z-index: 2000;
+            transition: transform 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease;
+        }
+        .navbar-hidden { transform: translateY(-100%); }
+        .navbar-scrolled {
+            background: rgba(0, 0, 0, 0.6) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 15px 8%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-fixed" id="mainNavbar">
+        <div class="logo">Nexus</div>
+        <div class="nav-right">
+            <a href="admin.html" class="nav-btn-new">Admin</a>
+            <a href="contact.html" class="nav-btn-new">Contact Me</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1><span class="pink-gradient">Gyanesh Pandey</span><br>Full Stack Devloper</h1>
+                <p>I'm gyanesh pandey — a designer who works with startups looking to push creative boundaries and create unique user experiences.</p>
+                <div class="cta-container">
+                    <button class="btn-book">Have Big Dreams ?? <span class="arrow">→</span></button>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="glow-box">
+                    <img src="8.jpg" alt="Designer Profile">
+                </div>
+            </div>
+        </section>
+
+        <section class="trusted-section">
+            <p class="section-label">TRUSTED BY INDUSTRYS</p>
+            <div class="logo-bar">
+                <span class="brand">Meta</span>
+                <span class="brand">Google</span>
+                <span class="brand">Samsung</span>
+                <span class="brand">Netlify</span>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <h2>Services <span class="pink-gradient">I belive in</span></h2>
+            <p class="service-sub">Hi, The Owner, a product designer based in Uttar Pradesh . I create user-<br>friendly interfaces for fast-growing startups.</p>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="card-icon">○ ●</div>
+                    <h3>Website Design</h3>
+                    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">◎</div>
+                    <h3>SEO Marketing</h3>
+                    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">⚗</div>
+                    <h3>WF Development</h3>
+                    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate</p>
+                </div>
+            </div>
+        </section>
+        
+        <div style="height: 50vh;"></div>
+    </main>
+
+    <script>
+        let lastScroll = window.pageYOffset;
+        const navbar = document.getElementById('mainNavbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            // Blur logic
+            if (currentScroll > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+
+            // Hide/Show logic
+            if (currentScroll > lastScroll && currentScroll > 150) {
+                navbar.classList.add('navbar-hidden');
+            } else {
+                navbar.classList.remove('navbar-hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
