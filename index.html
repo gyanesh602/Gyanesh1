@@ -1,131 +1,249 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Group</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Background Image Styling */
-        body {
-            margin: 0;
-            padding: 0;
-            /* Yahan apni image ka naam likhein */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('1.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Isse background move nahi karega */
-            background-repeat: no-repeat;
-            color: white; /* Text color visible rakhne ke liye */
-        }
-
-        /* Navbar behavior fix */
-        .navbar-fixed {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            z-index: 2000;
-            transition: transform 0.4s ease, background 0.4s ease, backdrop-filter 0.4s ease;
-        }
-        .navbar-hidden { transform: translateY(-100%); }
-        .navbar-scrolled {
-            background: rgba(0, 0, 0, 0.6) !important;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 15px 8%;
-        }
-    </style>
+    <title> Nexus Group </title>
 </head>
+
 <body>
 
-    <nav class="navbar-fixed" id="mainNavbar">
-        <div class="logo">Nexus</div>
-        <div class="nav-right">
-            <a href="admin.html" class="nav-btn-new">Admin</a>
-            <a href="contact.html" class="nav-btn-new">Contact Me</a>
+    <div class="top-container">
+
+        <div class="nav">
+            <div class="logo">
+                <i class='bx bxl-codepen'></i>
+                <a href="#">Nexus Group</a>
+            </div>
+
+            <div class="nav-links">
+    <a href="admin.html">Admin</a>
+    <a href="contact.html">Contact</a>
+</div>
+            <div class="right-section">
+                <i class='bx bx-bell'></i>
+                <i class='bx bx-search'></i>
+
+                <div class="profile">
+                    <div class="info">
+                        <img src="8.jpg">
+                        <div>
+                            <a href="#">Gyanesh Pandey</a>
+                            <p>Full Stack web devloper</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </div>
+
         </div>
-    </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1><span class="pink-gradient">Gyanesh Pandey</span><br>Full Stack Devloper</h1>
-                <p>I'm gyanesh pandey — a designer who works with startups looking to push creative boundaries and create unique user experiences.</p>
-                <div class="cta-container">
-                    <button class="btn-book">Have Big Dreams ?? <span class="arrow">→</span></button>
+        <div class="status">
+            <div class="header">
+                <h4 id="big">Your courses</h4>
+                <h4 id="small">Weekly Activity</h4>
+            </div>
+
+            <div class="items-list">
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Data Analysis</h5>
+                            <p>- 3 lessons left</p>
+                            <p>- 1 project left</p>
+                        </div>
+                        <i class='bx bx-data'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Machine Learn</h5>
+                            <p>- 2 assignments left</p>
+                            <p>- 5 tutorials left</p>
+                        </div>
+                        <i class='bx bx-terminal'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Python</h5>
+                            <p>- 4 chapters left</p>
+                            <p>- 8 quizzes left</p>
+                        </div>
+                        <i class='bx bxl-python'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <canvas class="activity-chart"></canvas>
                 </div>
             </div>
-            <div class="hero-image-wrapper">
-                <div class="glow-box">
-                    <img src="8.jpg" alt="Designer Profile">
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="bottom-container">
+
+        <div class="prog-status">
+            <div class="header">
+                <h4>learning Progress</h4>
+                <div class="tabs">
+                    <a href="#" class="active">1Y</a>
+                    <a href="#">6M</a>
+                    <a href="#">3M</a>
                 </div>
             </div>
-        </section>
 
-        <section class="trusted-section">
-            <p class="section-label">TRUSTED BY INDUSTRYS</p>
-            <div class="logo-bar">
-                <span class="brand">Meta</span>
-                <span class="brand">Google</span>
-                <span class="brand">Samsung</span>
-                <span class="brand">Netlify</span>
-            </div>
-        </section>
-
-        <section class="services-section">
-            <h2>Services <span class="pink-gradient">I belive in</span></h2>
-            <p class="service-sub">Hi, The Owner, a product designer based in Uttar Pradesh . I create user-<br>friendly interfaces for fast-growing startups.</p>
-            
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="card-icon">○ ●</div>
-                    <h3>Website Design</h3>
-                    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate</p>
+            <div class="details">
+                <div class="item">
+                    <h2>3.45</h2>
+                    <p>Current GPA</p>
                 </div>
-                <div class="service-card">
-                    <div class="card-icon">◎</div>
-                    <h3>SEO Marketing</h3>
-                    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate</p>
-                </div>
-                <div class="service-card">
-                    <div class="card-icon">⚗</div>
-                    <h3>WF Development</h3>
-                    <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate</p>
+                <div class="separator"></div>
+                <div class="item">
+                    <h2>4.78</h2>
+                    <p>Class Average GPA</p>
                 </div>
             </div>
-        </section>
-        
-        <div style="height: 50vh;"></div>
-    </main>
 
-    <script>
-        let lastScroll = window.pageYOffset;
-        const navbar = document.getElementById('mainNavbar');
+            <canvas class="prog-chart"></canvas>
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
+        </div>
 
-            // Blur logic
-            if (currentScroll > 50) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
+        <div class="popular">
+            <div class="header">
+                <h4>Popular</h4>
+                <a href="#"># Data</a>
+            </div>
 
-            // Hide/Show logic
-            if (currentScroll > lastScroll && currentScroll > 150) {
-                navbar.classList.add('navbar-hidden');
-            } else {
-                navbar.classList.remove('navbar-hidden');
-            }
-            
-            lastScroll = currentScroll;
-        });
-    </script>
+            <img src="8.jpg">
+            <div class="audio">
+                <i class='bx bx-podcast'></i>
+                <a href="#">Poedcast: Mastering Data Visualization</a>
+            </div>
+            <p>Learn to create compelling visualizations with data.</p>
+            <div class="listen">
+                <div class="author">
+                    <img src="8.jpg">
+                    <div>
+                        <a href="#">Alex</a>
+                        <p>Data Analyst</p>
+                    </div>
+                </div>
+                <button>Listen<i class='bx bx-right-arrow-alt'></i></button>
+            </div>
+
+        </div>
+
+
+        <div class="upcoming">
+
+            <div class="header">
+                <h4>You may like it</h4>
+                <a href="#">July <i class='bx bx-chevron-down'></i></a>
+            </div>
+
+            <div class="dates">
+                <div class="item">
+                    <h5>Mo</h5>
+                    <a href="#">12</a>
+                </div>
+                <div class="item active">
+                    <h5>Tu</h5>
+                    <a href="#">13</a>
+                </div>
+                <div class="item">
+                    <h5>We</h5>
+                    <a href="#">14</a>
+                </div>
+                <div class="item">
+                    <h5>Th</h5>
+                    <a href="#">15</a>
+                </div>
+                <div class="item">
+                    <h5>Fr</h5>
+                    <a href="#">16</a>
+                </div>
+                <div class="item">
+                    <h5>Sa</h5>
+                    <a href="#">17</a>
+                </div>
+                <div class="item">
+                    <h5>Su</h5>
+                    <a href="#">18</a>
+                </div>
+            </div>
+
+            <div class="events">
+                <div class="item">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        <div class="event-info">
+                            <a href="#">Data Science</a>
+                            <p>10:00-11:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        <div class="event-info">
+                            <a href="#">Machine Learning</a>
+                            <p>13:30-15:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        <div class="event-info">
+                            <a href="#">Beginner Python</a>
+                            <p>11:30-13:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <i class='bx bx-time'></i>
+                        <div class="event-info">
+                            <a href="#">Introduction to SQL</a>
+                            <p>10:00-11:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
 </body>
+
 </html>

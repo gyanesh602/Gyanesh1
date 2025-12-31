@@ -1,228 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Group</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <title>Admin Dashboard | AsmrProg</title>
     <style>
-        :root {
-            --sidebar-grad: linear-gradient(180deg, #814bf6 0%, #6121e0 100%);
-            --pink-grad: linear-gradient(135deg, #ff6b9d 0%, #fe3a7f 100%);
-            --bg-dark: #1a0b4d;
-            --font-main: 'Playfair Display', serif;
+        /* CSS to handle section switching */
+        .content-section {
+            display: none; /* Default hidden */
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--bg-dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: var(--font-main);
-            font-style: italic; /* Applying the specific style from your screenshot */
+        .content-section.active {
+            display: block; /* Show only active section */
+            animation: fadeIn 0.4s ease-in-out;
         }
 
-        .container {
-            width: 95%;
-            max-width: 1100px;
-            height: 650px;
-            background: #f1f5f9;
-            display: flex;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* --- SIDEBAR --- */
-        .sidebar {
-            width: 240px;
-            background: var(--sidebar-grad);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 40px;
-        }
-
-        .logo { font-size: 14px; letter-spacing: 2px; margin-bottom: 30px; opacity: 0.9; }
-        
-        .profile-img {
-            width: 100px; height: 100px;
-            background: rgba(255,255,255,0.2) url('https://via.placeholder.com/100') center/cover;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            border: 4px solid rgba(255,255,255,0.1);
-        }
-
-        .user-name { font-size: 22px; margin-bottom: 40px; font-weight: 600; }
-
-        .nav-link {
-            width: 100%;
-            padding: 18px 35px;
-            font-size: 12px;
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            cursor: pointer;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            background: rgba(255,255,255,0.15);
-            color: white;
-            border-left: 5px solid white;
-        }
-
-        /* --- MAIN CONTENT --- */
-        .main { flex: 1; padding: 30px; overflow-y: auto; }
-
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .header h1 { font-size: 24px; color: #4b5a76; letter-spacing: 1px; }
-
-        .search-bar {
-            padding: 10px 20px;
-            border-radius: 25px;
-            border: 1px solid #ddd;
-            width: 250px;
-            outline: none;
-            font-family: var(--font-main);
-        }
-
-        .tab-content { display: none; }
-        .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* CARDS GRID */
-        .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-        .card { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); margin-bottom: 20px; }
-        .card-title { font-size: 13px; color: #90a0b7; margin-bottom: 15px; font-weight: 600; }
-
-        .chart-placeholder { height: 160px; background: #f8faff; border-radius: 15px; position: relative; }
-        
-        .pink-card { background: var(--pink-grad); color: white; }
-
-        /* GALLERY & DOCS */
-        .gallery-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .gallery-item { height: 110px; border-radius: 15px; background-size: cover; background-position: center; border: 2px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        
-        .doc-item { background: white; padding: 15px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #eee; margin-bottom: 10px; }
-
-        .btn-action { background: #fe3a7f; color: white; border: none; padding: 10px 20px; border-radius: 12px; cursor: pointer; font-family: var(--font-main); }
     </style>
+    
 </head>
+
 <body>
 
     <div class="container">
-        <aside class="sidebar">
-            <div class="logo">WEBLOGO</div>
-            <div class="profile-img"></div>
-            <div class="user-name">Billy Joe</div>
-            <div class="nav-link active" onclick="switchTab(event, 'home')">Home</div>
-            <div class="nav-link" onclick="switchTab(event, 'document')">Document</div>
-            <div class="nav-link" onclick="switchTab(event, 'gallery')">Gallery</div>
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo">
+                    <h2>Asmr<span class="danger">Prog</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#" class="active" data-target="dashboard-section">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#" data-target="users-section">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+                <a href="#" data-target="history-section">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>History</h3>
+                </a>
+                <a href="#" data-target="analytics-section">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#" data-target="tickets-section">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Tickets</h3>
+                    <span class="message-count">27</span>
+                </a>
+                <a href="#" data-target="sale-list-section">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Sale List</h3>
+                </a>
+                <a href="#" data-target="reports-section">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#" data-target="settings-section">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
         </aside>
-
-        <main class="main">
-            <header class="header">
-                <h1>DASHBOARD</h1>
-                <input type="text" class="search-bar" placeholder="Search data...">
-            </header>
-
-            <div id="home" class="tab-content active">
-                <div class="grid">
-                    <div class="card">
-                        <div class="card-title">Traffic Chart</div>
-                        <div class="chart-placeholder">
-                            <svg viewBox="0 0 400 100" style="width: 100%; height: 100%;">
-                                <path d="M0 80 Q 100 20 200 60 T 400 40" fill="none" stroke="#6c32d4" stroke-width="3"/>
-                                <path d="M0 90 Q 120 40 250 80 T 400 70" fill="none" stroke="#fe3a7f" stroke-width="3"/>
-                            </svg>
+        <main id="main-content">
+            
+            <section id="dashboard-section" class="content-section active">
+                <h1>Analytics</h1>
+                <div class="analyse">
+                    <div class="sales">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Total Sales</h3>
+                                <h1>$65,024</h1>
+                            </div>
+                            <div class="progresss">
+                                <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                                <div class="percentage"><p>+81%</p></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card pink-card">
-                        <div class="card-title" style="color:white">MOST VISITED</div>
-                        <p style="font-size: 13px; line-height: 1.6;">Your most popular admin content will appear here based on analytics.</p>
+                    <div class="visits">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Site Visit</h3>
+                                <h1>24,981</h1>
+                            </div>
+                            <div class="progresss">
+                                <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                                <div class="percentage"><p>-48%</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="searches">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Searches</h3>
+                                <h1>14,147</h1>
+                            </div>
+                            <div class="progresss">
+                                <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                                <div class="percentage"><p>+21%</p></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                   
-                
-                </div>
-            </div>
 
-            <div id="gallery" class="tab-content">
-                <h2 style="margin-bottom: 20px; color: #4b5a76;">Gallery Storage</h2>
-                <div class="gallery-wrap" id="galleryGrid">
-                    <div class="gallery-item" style="background-image: url('https://picsum.photos/300/300?1');"></div>
-                    <div class="gallery-item" style="background-image: url('https://picsum.photos/300/300?2');"></div>
-                    <div class="gallery-item" style="background-image: url('https://picsum.photos/300/300?3');"></div>
-                </div>
-            </div>
-
-            <div id="document" class="tab-content">
-                <h2 style="margin-bottom: 20px; color: #4b5a76;">Admin Documents</h2>
-                <div id="documentList">
-                    <div class="doc-item">
-                        <span>Project_Specs_Final.pdf</span>
-                        <button class="btn-action">Download</button>
+                <div class="new-users">
+                    <h2>New Users</h2>
+                    <div class="user-list">
+                        <div class="user">
+                            <img src="images/profile-2.jpg">
+                            <h2>Jack</h2>
+                            <p>54 Min Ago</p>
+                        </div>
+                        <div class="user">
+                            <img src="images/profile-3.jpg">
+                            <h2>Amir</h2>
+                            <p>3 Hours Ago</p>
+                        </div>
+                        <div class="user">
+                            <img src="images/plus.png">
+                            <h2>More</h2>
+                            <p>New User</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="upload" class="tab-content">
-                <div class="card" style="text-align: center; padding: 60px;">
-                    <h2 style="margin-bottom: 20px;">Upload Admin Assets</h2>
-                    <p style="color: #666; margin-bottom: 20px;">Select images or documents to add to the dashboard.</p>
-                    <input type="file" id="adminFile" accept="image/*,.pdf,.doc"><br><br>
-                    <button class="btn-action" onclick="handleAdminUpload()">Upload Now</button>
+                <div class="recent-orders">
+                    <h2>Recent Orders</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Course Number</th>
+                                <th>Payment</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-orders-table-body">
+                            </tbody>
+                    </table>
+                    <a href="#">Show All</a>
                 </div>
-            </div>
+            </section>
+
+            <section id="users-section" class="content-section">
+                <h1>User Management</h1>
+                <div class="recent-orders">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Reza</td>
+                                <td>reza@example.com</td>
+                                <td>Admin</td>
+                                <td class="success">Active</td>
+                            </tr>
+                            <tr>
+                                <td>Jack</td>
+                                <td>jack@test.com</td>
+                                <td>Student</td>
+                                <td class="warning">Pending</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="history-section" class="content-section">
+                <h1>Activity History</h1>
+                <p>Transaction records aur purani activities yahan dikhengi.</p>
+            </section>
+
+            <section id="analytics-section" class="content-section">
+                <h1>Data Insights</h1>
+                <p>Detailed graphs aur analytical reports yahan load hongi.</p>
+            </section>
+
+            <section id="tickets-section" class="content-section">
+                <h1>Support Tickets</h1>
+                <p>Aapke paas 27 pending tickets hain jin par dhayan dena hai.</p>
+            </section>
+
+            <section id="settings-section" class="content-section">
+                <h1>Settings</h1>
+                <p>Password change, Profile edit aur Preferences yahan set karein.</p>
+            </section>
+
         </main>
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reza</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/logo.png">
+                    <h2>AsmrProg</h2>
+                    <p>Fullstack Web Developer</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">notifications_none</span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">volume_up</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">08:00 AM - 12:00 PM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add Reminder</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script>
-        function switchTab(e, tabName) {
-            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            document.getElementById(tabName).classList.add('active');
-            e.currentTarget.classList.add('active');
-        }
-
-        function handleAdminUpload() {
-            const fileInput = document.getElementById('adminFile');
-            const file = fileInput.files[0];
-            
-            if (file) {
-                alert(file.name + " uploaded to Server.");
-                
-                if (file.type.startsWith('image/')) {
-                    // Actual Logic: Add image to Gallery
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const newImg = document.createElement('div');
-                        newImg.className = 'gallery-item';
-                        newImg.style.backgroundImage = `url(${e.target.result})`;
-                        document.getElementById('galleryGrid').prepend(newImg);
-                        switchTab({currentTarget: document.querySelectorAll('.nav-link')[2]}, 'gallery');
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    // Logic: Add to Documents
-                    const newDoc = document.createElement('div');
-                    newDoc.className = 'doc-item';
-                    newDoc.innerHTML = `<span>${file.name}</span><button class="btn-action">Download</button>`;
-                    document.getElementById('documentList').prepend(newDoc);
-                    switchTab({currentTarget: document.querySelectorAll('.nav-link')[1]}, 'document');
-                }
-            } else {
-                alert("Please select a file first.");
-            }
-        }
-    </script>
+    <script src="orders.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
