@@ -1,21 +1,16 @@
 
 const Orders = [
     {
-        productName: 'JavaScript Tutorial',
-        productNumber: '85743',
+        productName: 'Gyanesh Pandey',
+        productNumber: 'No sallary',
         paymentStatus: 'Due',
-        status: 'Pending'
+        status: 'Started'
     },
     {
-        productName: 'CSS Full Course',
-        productNumber: '97245',
-        paymentStatus: 'Refunded',
-        status: 'Declined'
+        productName: 'NO other employs',
+        productNumber: '00',
+        paymentStatus: '00',
+        status: '00'
     },
-    {
-        productName: 'Flex-Box Tutorial',
-        productNumber: '36452',
-        paymentStatus: 'Paid',
-        status: 'Active'
-    },
+   
 ]
