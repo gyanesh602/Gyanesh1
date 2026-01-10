@@ -1,278 +1,208 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="admin-dashboard.css">
-    <title>Gyanesh Pandey {admin} </title>
-    <style>
-        /* CSS to handle section switching */
-        .content-section {
-            display: none; /* Default hidden */
-        }
-
-        .content-section.active {
-            display: block; /* Show only active section */
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-    
+    <title>Responsive Dashboard Design #2 | AsmrProg</title>
 </head>
 
 <body>
 
-    <div class="container">
-        <aside>
-            <div class="toggle">
-                <div class="logo">
-                    <img src="..jpg" alt="Logo">
-                    <h2>Gyanesh<span class="danger">Pandey</span></h2>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>Asmr</span>Prog</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="#"><i class='bx bx-store-alt'></i>Shop</a></li>
+            <li class="active"><a href="#"><i class='bx bx-analyse'></i>Analytics</a></li>
+            <li><a href="#"><i class='bx bx-message-square-dots'></i>Tickets</a></li>
+            <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
+            <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
                 </div>
-                <div class="close" id="close-btn">
-                    <span class="material-icons-sharp">close</span>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="images/logo.png">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Dashboard</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Analytics
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Shop</a></li>
+                    </ul>
                 </div>
+                <a href="#" class="report">
+                    <i class='bx bx-cloud-download'></i>
+                    <span>Download CSV</span>
+                </a>
             </div>
 
-            <div class="sidebar">
-                <a href="#" class="active" data-target="dashboard-section">
-                    <span class="material-icons-sharp">dashboard</span>
-                    <h3>Dashboard</h3>
-                </a>
-                <a href="#" data-target="users-section">
-                    <span class="material-icons-sharp">person_outline</span>
-                    <h3>Users</h3>
-                </a>
-                <a href="#" data-target="history-section">
-                    <span class="material-icons-sharp">receipt_long</span>
-                    <h3>History</h3>
-                </a>
-                <a href="#" data-target="analytics-section">
-                    <span class="material-icons-sharp">insights</span>
-                    <h3>Analytics</h3>
-                </a>
-                <a href="#" data-target="tickets-section">
-                    <span class="material-icons-sharp">mail_outline</span>
-                    <h3>Tickets</h3>
-                    <span class="message-count">27</span>
-                </a>
-                <a href="#" data-target="sale-list-section">
-                    <span class="material-icons-sharp">inventory</span>
-                    <h3>Sale List</h3>
-                </a>
-                <a href="#" data-target="reports-section">
-                    <span class="material-icons-sharp">report_gmailerrorred</span>
-                    <h3>Reports</h3>
-                </a>
-                <a href="#" data-target="settings-section">
-                    <span class="material-icons-sharp">settings</span>
-                    <h3>Settings</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">logout</span>
-                    <h3>Logout</h3>
-                </a>
-            </div>
-        </aside>
-        <main id="main-content">
-            
-            <section id="dashboard-section" class="content-section active">
-                <h1>Analytics</h1>
-                <div class="analyse">
-                    <div class="sales">
-                        <div class="status">
-                            <div class="info">
-                                <h3>Total Sales</h3>
-                                <h1>000.000</h1>
-                            </div>
-                            <div class="progresss">
-                                <svg><circle cx="38" cy="38" r="36"></circle></svg>
-                                <div class="percentage"><p>+00%</p></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="visits">
-                        <div class="status">
-                            <div class="info">
-                                <h3>Site Visit</h3>
-                                <h1>Stopped</h1>
-                            </div>
-                            <div class="progresss">
-                                <svg><circle cx="38" cy="38" r="36"></circle></svg>
-                                <div class="percentage"><p>-48%</p></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="searches">
-                        <div class="status">
-                            <div class="info">
-                                <h3>Searches</h3>
-                                <h1>0</h1>
-                            </div>
-                            <div class="progresss">
-                                <svg><circle cx="38" cy="38" r="36"></circle></svg>
-                                <div class="percentage"><p>+00%</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <i class='bx bx-calendar-check'></i>
+                    <span class="info">
+                        <h3>
+                            1,074
+                        </h3>
+                        <p>Paid Order</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-show-alt'></i>
+                    <span class="info">
+                        <h3>
+                            3,944
+                        </h3>
+                        <p>Site Visit</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-line-chart'></i>
+                    <span class="info">
+                        <h3>
+                            14,721
+                        </h3>
+                        <p>Searches</p>
+                    </span>
+                </li>
+                <li><i class='bx bx-dollar-circle'></i>
+                    <span class="info">
+                        <h3>
+                            $6,742
+                        </h3>
+                        <p>Total Sales</p>
+                    </span>
+                </li>
+            </ul>
+            <!-- End of Insights -->
 
-                <div class="new-users">
-                    <h2>Companys Targeted</h2>
-                    <div class="user-list">
-                        <div class="user">
-                            <img src="images/profile-2.jpg">
-                            <h2>Jack</h2>
-                            <p>54 Min Ago</p>
-                        </div>
-                        <div class="user">
-                            <img src="images/profile-3.jpg">
-                            <h2>Amir</h2>
-                            <p>3 Hours Ago</p>
-                        </div>
-                        <div class="user">
-                            <img src="images/plus.png">
-                            <h2>More</h2>
-                            <p>New User</p>
-                        </div>
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-receipt'></i>
+                        <h3>Recent Orders</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-search'></i>
                     </div>
-                </div>
-
-                <div class="recent-orders">
-                    <h2>Recent Orders</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Employs</th>
-                                <th>Sallary</th>
-                                <th>Payment</th>
-                                <th>Work</th>
-                                <th>Level Of Work</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recent-orders-table-body">
-                            </tbody>
-                    </table>
-                    <a href="#">Show All</a>
-                </div>
-            </section>
-
-            <section id="users-section" class="content-section">
-                <h1>User Management</h1>
-                <div class="recent-orders">
                     <table>
                         <thead>
                             <tr>
                                 <th>User</th>
-                                <th>Email</th>
-                                <th>Role</th>
+                                <th>Order Date</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Gyanesh</td>
-                                <td>Gyaneshp888@gmail.com</td>
-                                <td>Admin</td>
-                                <td class="success">Active</td>
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status completed">Completed</span></td>
                             </tr>
                             <tr>
-                                <td>Gyanesh</td>
-                                <td>Gyaneshp888@gmail.com</td>
-                                <td>Student</td>
-                                <td class="warning">Pending</td>
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/profile-1.jpg">
+                                    <p>John Doe</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="status process">Processing</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </section>
 
-            <section id="history-section" class="content-section">
-                <h1>Activity History</h1>
-                <p>Transaction records aur purani activities yahan dikhengi.</p>
-            </section>
+                <!-- Reminders -->
+                <div class="reminders">
+                    <div class="header">
+                        <i class='bx bx-note'></i>
+                        <h3>Remiders</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-plus'></i>
+                    </div>
+                    <ul class="task-list">
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Start Our Meeting</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Analyse Our Site</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="not-completed">
+                            <div class="task-title">
+                                <i class='bx bx-x-circle'></i>
+                                <p>Play Footbal</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                    </ul>
+                </div>
 
-            <section id="analytics-section" class="content-section">
-                <h1>Data Insights</h1>
-                <p>Detailed graphs aur analytical reports yahan load hongi.</p>
-            </section>
+                <!-- End of Reminders-->
 
-            <section id="tickets-section" class="content-section">
-                <h1>Support Tickets</h1>
-                <p>Aapke paas 27 pending tickets hain jin par dhayan dena hai.</p>
-            </section>
-
-            <section id="settings-section" class="content-section">
-                <h1>Settings</h1>
-                <p>Password change, Profile edit aur Preferences yahan set karein.</p>
-            </section>
+            </div>
 
         </main>
-        <div class="right-section">
-            <div class="nav">
-                <button id="menu-btn">
-                    <span class="material-icons-sharp">menu</span>
-                </button>
-                <div class="dark-mode">
-                    <span class="material-icons-sharp active">light_mode</span>
-                    <span class="material-icons-sharp">dark_mode</span>
-                </div>
 
-                <div class="profile">
-                    <div class="info">
-                        <p>Hey, <b>Gyanesh</b></p>
-                        <small class="text-muted">Admin</small>
-                    </div>
-                    <div class="profile-photo">
-                        <img src="..jpg">
-                    </div>
-                </div>
-            </div>
-
-            <div class="user-profile">
-                <div class="logo">
-                    <img src="..jpg">
-                    <h2>Gyanesh Pandey</h2>
-                    <p>Fullstack Web Developer</p>
-                </div>
-            </div>
-
-            <div class="reminders">
-                <div class="header">
-                    <h2>Reminders</h2>
-                    <span class="material-icons-sharp">notifications_none</span>
-                </div>
-
-                <div class="notification">
-                    <div class="icon">
-                        <span class="material-icons-sharp">volume_up</span>
-                    </div>
-                    <div class="content">
-                        <div class="info">
-                            <h3>Workshop</h3>
-                            <small class="text_muted">Stopped Due To Learning</small>
-                        </div>
-                        <span class="material-icons-sharp">more_vert</span>
-                    </div>
-                </div>
-
-                <div class="notification add-reminder">
-                    <div>
-                        <span class="material-icons-sharp">add</span>
-                        <h3>Add Reminder</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
-    <script src="orders.js"></script>
     <script src="index.js"></script>
 </body>
 

@@ -6,29 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="admin.css">
-    <title>Modern Login Page | Admin Access</title>
-    
-    <style>
-        /* Background Image lagane ke liye CSS */
-        body {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('7.jpg'); /* Yahan apni image ka naam likhein */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        /* Container ko thoda transparent dikhane ke liye (Optional) */
-        .container {
-            background-color: rgba(255, 255, 255, 0.9); 
-            backdrop-filter: blur(5px);
-        }
-    </style>
+    <title>Modern Login Page | AsmrProg</title>
 </head>
 
 <body>
@@ -43,16 +21,15 @@
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <span>or use your email for registration</span>
+                <span>or use your email for registeration</span>
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
                 <input type="password" placeholder="Password">
                 <button type="button">Sign Up</button>
             </form>
         </div>
-
         <div class="form-container sign-in">
-            <form id="loginForm">
+            <form id="adminLoginForm">
                 <h1>Sign In</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -60,14 +37,13 @@
                     <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <input type="email" id="adminEmail" placeholder="Email" required>
-                <input type="password" id="adminPassword" placeholder="Password" required>
-                
+                <span>or use your email password</span>
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
                 <a href="#">Forget Your Password?</a>
                 <button type="submit">Sign In</button>
             </form>
         </div>
-
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
@@ -76,9 +52,9 @@
                     <button class="hidden" id="login">Sign In</button>
                 </div>
                 <div class="toggle-panel toggle-right">
-                    <h1>Hello, Gyanesh Pandey!</h1>
-                    <p>We have very strict guideline. Only owner {Gyanesh Pandey} can operate admin panel.</p>
-                    <button class="hidden" id="register">Welcome Sir</button>
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
                 </div>
             </div>
         </div>
@@ -87,19 +63,24 @@
     <script src="script.js"></script>
 
     <script>
-        // Login Logic
-        const loginForm = document.getElementById('loginForm');
-
+        const loginForm = document.getElementById('adminLoginForm');
+        
         loginForm.addEventListener('submit', function(e) {
-            e.preventDefault(); 
+            e.preventDefault(); // Page refresh hone se rokne ke liye
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
 
-            const email = document.getElementById('adminEmail').value;
-            const password = document.getElementById('adminPassword').value;
+            // Yahan aap apni specified details change kar sakte hain
+            const validEmail = "gyanastra@123";
+            const validPassword = "gyanastra123";
 
-            if (email === "nexus@gmail.com" && password === "gyaneshpandey") {
-                window.location.href = "admin-dashboard.html"; 
+            if (email === validEmail && password === validPassword) {
+                // Agar detail sahi hai to is page par bhej dega
+                window.location.href = "admin-dashboard.html";
             } else {
-                alert("Wrong Password! it's says you are not the admin");
+                // Agar detail galat hai
+                alert("Invalid Login Details! Please try again.");
             }
         });
     </script>

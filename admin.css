@@ -209,3 +209,16 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background-image: url("7.jpg"); /* image path */
+    background-size: cover;        /* full screen */
+    background-position: center;   /* center image */
+    background-repeat: no-repeat;  /* no repeat */
+    background-attachment: fixed;  /* parallax effect (optional) */
+
+    font-family: 'Segoe UI', sans-serif;
+}

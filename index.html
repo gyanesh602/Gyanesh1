@@ -1,249 +1,329 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google Font FIRST -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+
+    <!-- Your CSS -->
     <link rel="stylesheet" href="style.css">
-    <title> Nexus Group </title>
+
+    <title>GyanAstra</title>
 </head>
+
 
 <body>
 
-    <div class="top-container">
+    <nav class="navbar">
 
-        <div class="nav">
-            <div class="logo">
-                <i class='bx bxl-codepen'></i>
-                <a href="#">Nexus Group</a>
+        <!-- LOGO (NOT DELETED) -->
+        <a href="#" class="navbar__logo" id="logoHome">
+            <i class=""></i>GyanAstra
+        </a>
+
+        <div class="navbar__menu">
+            <a href="#" class="navbar__link" id="navHome">Home</a>
+            <a href="admin.html" class="navbar__link" id="navAdmin">Admin</a>
+            <a href="contact.html" class="navbar__link" id="navContact">Contact</a>
+            <a href="product.html" class="navbar__link" id="navContact">Games</a>
+        </div>
+
+        <div class="navbar__actions">
+            <div class="navbar__location">
+                <h5>GyanAstra<h5>
+                <p>A future Software</p>
             </div>
+            <button class="btn" id="instagramBtn">Instagram</button>
+        </div>
 
-            <div class="nav-links">
-    <a href="admin.html">Admin</a>
-    <a href="contact.html">Contact</a>
-</div>
-            <div class="right-section">
-                <i class='bx bx-bell'></i>
-                <i class='bx bx-search'></i>
+    </nav>
 
-                <div class="profile">
-                    <div class="info">
-                        <img src="8.jpg">
-                        <div>
-                            <a href="#">Gyanesh Pandey</a>
-                            <p>Full Stack web devloper</p>
-                        </div>
+    <section class="hero" id="home">
+
+        <div class="hero__content">
+            <img src="21.png" alt="Profile Image" class="hero__image">
+            <h2>Hello! Myself Gyanesh Pandey</h2>
+        </div>
+
+        <div class="hero__intro">
+            <h3>A gamer Based In India, I Play AAA tittle Games and review them</h3>
+            <p>Providing Game Keys At Lowest Prices</p>
+            <div class="hero__actions">
+                <button class="btn" id="whatsappBtn">Wanna play ??</button>
+                <button class="btn btn--secondary" id="scrollPortfolio">Games Section</button>
+            </div>
+        </div>
+
+        <div class="hero__socials">
+            <a href="#" id="instaIcon"><i class="ri-instagram-line"></i></a>
+            <a href="#" id="dribbbleIcon"><i class="ri-dribbble-line"></i></a>
+            <a href="#" id="linkedinIcon"><i class="ri-linkedin-box-line"></i></a>
+            <a href="#" id="youtubeIcon"><i class="ri-youtube-line"></i></a>
+        </div>
+
+    </section>
+
+    <section class="skills">
+
+        <div class="skills__desc">
+            <h3>Experienced Across Multiple Games and Technologies</h3>
+            <p>Bringing creativity and technical proficiency by Providinng original games in awesome Prices</p>
+
+            <div class="skills__actions">
+                <button class="btn" id="whatsappBtn2">Work With Me</button>
+                <button class="btn btn--secondary" id="sendEmail">Send Email</button>
+            </div>
+        </div>
+
+        <div class="skills__stats">
+            <i class="ri-codepen-line"></i>
+            <div class="skill__info">
+                <h5>40+ Months Experience</h5>
+                <p>AAA Titles</p>
+            </div>
+            <i class="ri-reactjs-line"></i>
+            <div class="skill__info">
+                <h5>12+</h5>
+                <p>Servers Of Games</p>
+            </div>
+            <div class="skill__info">
+                <h5>50+</h5>
+                <p>Moding tools</p>
+            </div>
+            <i class="ri-rocket-line"></i>
+            <div class="skill__info">
+                <h5>20+</h5>
+                <p>Free keys</p>
+            </div>
+            <i class="ri-remote-control-line"></i>
+        </div>
+
+    </section>
+
+    <section class="showcase" id="projects">
+
+        <div class="showcase__header">
+            <h3>The key selling function stopped due to irregular activity of owner</h3>
+            <button class="btn" id="seeMyWork">See My Work</button>
+        </div>
+
+        <div class="showcase_categories">
+
+            <section class="category">
+                <div class="category__header">
+                    <div class="category__title">
+                        <i class="ri-macbook-line"></i>
+                        <h4>Games That We Orgonise</h4>
                     </div>
-                    <i class='bx bx-chevron-down'></i>
+                    <div class="category__desc">
+                        <p>REPUBLIC OF GAMERS{ASUS}</p>
+                        <a href="#" class="shareBtn"><i class="ri-share-circle-line"></i></a>
+                    </div>
                 </div>
-            </div>
+
+                <div class="category__projects">
+                    <div class="project-card">
+                        <img src="16.avif" alt="Portfolio 1" class="project-card__image">
+                        <div class="project-card__info">
+                            <h5>G.T.A V</h5>
+                            <p>17 September 2013</p>
+                        </div>
+                        <p class="project-card__desc">Grand Theft Auto V (GTA V) is a hugely popular, satirical open-world action-adventure game featuring three playable protagonists—Michael, Franklin, and Trevor—who execute heists in the fictional city of Los Santos (based on Los Angeles) and its surrounding areas, blending a compelling story with vast freedom, alongside the massively successful, ever-evolving online multiplayer world, Grand Theft Auto Online (GTA Online). Released by Rockstar Games, the game offers rich single-player content and a dynamic online universe with continuous updates, making it one of the best-selling games ever. </p>
+                        <button class="btn projectDemo">Play Now</button>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="13.jpg" alt="Portfolio 2" class="project-card__image">
+                        <div class="project-card__info">
+                            <h5>RDR II</h5>
+                            <p>26 October 2018</p>
+                        </div>
+                        <p class="project-card__desc">Red Dead Redemption 2 (RDR2) is a critically acclaimed, open-world action-adventure game set in a fictionalized version of the American Old West in 1899, during the decline of the outlaw era. The game is a prequel to the original Red Dead Redemption and follows the story of Arthur Morgan, a senior member of the Van der Linde gang, led by the charismatic but increasingly unstable Dutch van der Linde. After a botched robbery in Blackwater, the gang is forced to flee across America, dealing with federal agents, bounty hunters, and internal divisions while trying to survive in a rapidly modernizing world that has no place for outlaws.</p>
+                        <button class="btn projectDemo">Play Now</button>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="14.jpg" alt="Portfolio 3" class="project-card__image">
+                        <div class="project-card__info">
+                            <h5>Minecraft</h5>
+                            <p>18 November 2011</p>
+                        </div>
+                        <p class="project-card__desc">Minecraft is a hugely popular 3D sandbox game where players explore, gather resources, craft items, and build structures in a blocky, procedurally generated world, offering immense creative freedom with no set goals, though survival elements and adventure exist, making it a digital canvas for creativity, exploration, and problem-solving on nearly every platform. Developed by Mojang Studios (part of Xbox Game Studios), it's known for its simple block-based aesthetic but deep gameplay, allowing players to build anything from simple houses to complex machines, explore diverse biomes, fight monsters, and play solo or with friends.</p>
+                        <button class="btn projectDemo">Play Now</button>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="15.avif" alt="Portfolio 4" class="project-card__image">
+                        <div class="project-card__info">
+                            <h5>forza Horizon 5</h5>
+                            <p>01 November 2021</p>
+                        </div>
+                        <p class="project-card__desc">Forza Horizon 5 is a massive, vibrant open-world racing game set in Mexico, offering hundreds of customizable cars, diverse environments (volcanoes, jungles, cities), dynamic seasons with weather events like dust storms, and deep customization for both cars and characters, featuring a huge map, extensive online modes (like Horizon Arcade), and player-created content via EventLab, praised as one of the best arcade racers with realistic physics. </p>
+                        <button class="btn projectDemo">Play Now</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="category">
+                <div class="category__header">
+                    <div class="category__title">
+                        <i class="ri-group-2-line"></i>
+                        <h4>Most Awated Gmaes</h4>
+                    </div>
+                    <div class="category__desc">
+                        <p>The most awaited games include massive anticipated titles like Grand Theft Auto VI, Marvel's Wolverine, The Witcher 4, Fable, and Resident Evil: Requiem. longside major remakes like Metal Gear Solid Delta. Other highly anticipated games feature new entries in major series like Borderlands 4, Monster Hunter Wilds, Forza Horizon 6, and Gears of War: E-Day, plus promising new IPs and sequels from major developers for 2025 and 2026. </p>
+                        <a href="#" class="shareBtn"><i class="ri-share-circle-line"></i></a>
+                    </div>
+                </div>
+
+                <div class="category__projects">
+                    <div class="project-card">
+                        <img src="17.jpg" alt="NFT Landing" class="project-card__image">
+                        <div class="project-card__info">
+                            <h5>GTA VI</h5>
+                            <p>Comming Soon</p>
+                        </div>
+                        <p class="project-card__desc">Grand Theft Auto VI (GTA VI) is Rockstar Games' highly anticipated sequel, set in the modern, Miami-inspired Vice City and the surrounding state of Leonida, featuring a Bonnie & Clyde-style criminal duo, Lucia and Jason, with next-gen graphics and realistic physics, targeting a November 19, 2026, release for PlayStation 5 and Xbox Series X/S after delays, promising a massive, immersive open world filled with intricate details and a deep criminal story. Setting: Fictional US state of Leonida, including Vice City (Miami parody) and the surrounding areas, heavily inspired by Florida.
+Characters: Lucia (female protagonist) and Jason (male protagonist) form a criminal couple navigating a conspiracy.
+Gameplay:  </p>
+                        <button class="btn projectDemo">Comming Soon</button>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="18.jfif" alt="Music Platform" class="project-card__image">
+                        <div class="project-card__info">
+                            <h5>Forza Horizon VI</h5>
+                            <p>Comming Soon</p>
+                        </div>
+                        <p class="project-card__desc">Forza Horizon 6 is an upcoming open-world racing game set in a stylized version of Japan, confirmed for a 2026 release on Xbox and PC, with a PlayStation 5 version to follow. Developed by Playground Games, it features iconic locations like Mount Fuji and Tokyo streets, diverse environments including rural areas, and aims to deeply integrate Japanese car culture, fashion, and music, with enhanced seasonal changes affecting gameplay and visuals. The game promises a diverse map, including K-cars and classic JDM legends like the Mazda RX7 and Toyota AE86, focusing on a rich, authentic Japanese experience</p>
+                        <button class="btn projectDemo">Comming Soon</button>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="19.jpg" alt="Crypto Market" class="project-card__image">
+                        <div class="project-card__info">
+                            <h5>The Witcher IV</h5>
+                            <p>Comming Soon</p>
+                        </div>
+                        <p class="project-card__desc">Protagonist: Ciri, embracing her destiny as a monster hunter, potentially becoming the first true Witcher by choice after the Trial of the Grasses.
+Setting: Primarily in the unexplored northern kingdom of Kovir, featuring new locations like the Dragon Mountains, expanding the Continent.
+Gameplay: Ciri's combat will be fast, acrobatic, and fluid, contrasting Geralt's style, with more magic and elemental abilities.
+Technology: Built on Unreal Engine 5, using Nanite for detailed foliage and advanced lighting, creating a more vibrant and dynamic world.
+World: Expect highly interactive NPCs, realistic environmental reactions, and seamless gameplay-to-dialogue transitions.
+Story:  </p>
+                        <button class="btn projectDemo">Comming Soon</button>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="20.jfif" alt="Jobs Platform" class="project-card__image">
+                        <div class="project-card__info">
+                            <h5>Resident Evil: Requiem (RE9)</h5>
+                            <p>Comming Soon</p>
+                        </div>
+                        <p class="project-card__desc">New Protagonist: FBI analyst Grace Ashcroft leads the story as she investigates mysterious deaths connected to the Wrenwood Hotel, leading her back to Raccoon City.
+Returning Hero: Iconic agent Leon S. Kennedy returns, with his gameplay offering a contrast to Grace's more tension-filled horror, providing moments of action and release.
+Dual Protagonists: The game features two distinct gameplay styles and perspectives, blending slow-burn horror with exhilarating action sequences.
+Setting & Atmosphere: The game revisits the ruins of Raccoon City, using advanced path tracing for realistic visuals, creating a gloomy, immersive atmosphere often compared to Silent Hill 2 and the RE2 Remake.
+Narrative Focus: </p>
+                        <button class="btn projectDemo">Comming Soon</button>
+                    </div>
+                </div>
+
+            </section>
 
         </div>
 
-        <div class="status">
-            <div class="header">
-                <h4 id="big">My Knowledge</h4>
-                <h4 id="small">Weakly Update</h4>
+    </section>
+
+    <section class="career">
+        <div class="career__jobs">
+            <h3>I also Do Devlopement</h3>
+            <div class="job">
+                <i class="ri-pen-nib-line"></i>
+                <div class="job__info">
+                    <h5>Frontend Developer IN <span>Html and Tailwind</span></h5>
+                    <p>Since 2025</p>
+                </div>
+            </div>
+            <div class="job">
+                <i class="ri-reactjs-fill"></i>
+                <div class="job__info">
+                    <h5>React Developer at <span>WebSolutions</span></h5>
+                    <p>Since 2025 </p>
+                </div>
+            </div>
+            <div class="job">
+                <i class="ri-paint-brush-line"></i>
+                <div class="job__info">
+                    <h5>UI/UX Developer at <span>StartupX</span></h5>
+                    <p>Since 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="career__awards">
+            <h3>Process of purchase</h3>
+
+            <div class="award">
+                <div>
+                    <i class="ri-medal-fill"></i>
+                    <div class="award__info">
+                        <h5>Select game<span> and Add to cart</span></h5>
+                        <p>Do a smooth purchase</p>
+                    </div>
+                </div>
+                <a href="#" class="awardLink"><i class="ri-external-link-line"></i></a>
             </div>
 
-            <div class="items-list">
-                <div class="item">
-                    <div class="info">
-                        <div>
-                            <h5>Web Devlopement</h5>
-                            <p>- Frontend Work</p>
-                            <p>- Backend Work</p>
-                        </div>
-                        <i class='bx bx-data'></i>
-                    </div>
-                    <div class="progress">
-                        <div class="bar"></div>
+            <div class="award">
+                <div>
+                    <i class="ri-javascript-line"></i>
+                    <div class="award__info">
+                        <h5>If purchase is disrupting<span> Fill a request from in contact page we shall solve the problem</span></h5>
+                        <p>As soon As posible</p>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="info">
-                        <div>
-                            <h5>Gaming</h5>
-                            <p>- Rockstar engine</p>
-                            <p>- Unreal engine 5</p>
-                        </div>
-                        <i class='bx bx-terminal'></i>
-                    </div>
-                    <div class="progress">
-                        <div class="bar"></div>
+                <a href="#" class="awardLink"><i class="ri-external-link-line"></i></a>
+            </div>
+
+            <div class="award">
+                <div>
+                    <i class="ri-award-fill"></i>
+                    <div class="award__info">
+                        <h5>Enjoy !!<span> AAA Tiltle </span></h5>
+                        <p>Thanks For purchasing</p>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="info">
-                        <div>
-                            <h5>AI/ML</h5>
-                            <p>- Supervised Learning</p>
-                            <p>- Reinforcement Learning</p>
-                        </div>
-                        <i class='bx bxl-python'></i>
-                    </div>
-                    <div class="progress">
-                        <div class="bar"></div>
-                    </div>
-                </div>
-                <div class="item">
-                    <canvas class="activity-chart"></canvas>
-                </div>
+                <a href="#" class="awardLink"><i class="ri-external-link-line"></i></a>
             </div>
 
         </div>
+    </section>
 
+    <section class="contact" id="contact">
+        <h5>Want To Play Such Games?</h5>
+        <h2>Let's Play Together </h2>
+        <button class="btn" id="sendMessage">Send Message</button>
+        <p>BY-> <span>Gyanesh Pandey</span></p>
+    </section>
 
-
-    </div>
-
-
-    <div class="bottom-container">
-
-        <div class="prog-status">
-            <div class="header">
-                <h4> Website activity-chart </h4>
-                <div class="tabs">
-                    <a href="#" class="active">Term</a>
-                    <a href="#">Play</a>
-                    <a href="#">Here</a>
-                </div>
-            </div>
-
-            <div class="details">
-                <div class="item">
-                    <h2>0</h2>
-                    <p>Grounded Employs</p>
-                </div>
-                <div class="separator"></div>
-                <div class="item">
-                    <h2>00.00</h2>
-                    <p> Shares Arrived </p>
-                </div>
-            </div>
-
-            <canvas class="prog-chart"></canvas>
-
+    <footer class="footer">
+        <div class="footer__brand">
+            <a href="#" id="footerLogo">Gyanastra</a>
+            <p>Hey myself Gyanesh Pandey. I am going to create a software that sells real game keys at lowest rates.</p>
         </div>
+        
 
-        <div class="popular">
-            <div class="header">
-                <h4>Popular</h4>
-                <a href="#"># Data</a>
-            </div>
-
-            <img src="8.jpg">
-            <div class="audio">
-                <i class='bx bx-podcast'></i>
-                <a href="#">Devlopement- Through A Devloper</a>
-            </div>
-            <p>Learn Devlopement To Play With Data</p>
-            <div class="listen">
-                <div class="author">
-                    <img src="8.jpg">
-                    <div>
-                        <a href="#">Gyanesh</a>
-                        <p>Full Stack Web-Devloper</p>
-                    </div>
-                </div>
-                <button>Listen<i class='bx bx-right-arrow-alt'></i></button>
-            </div>
-
-        </div>
-
-
-        <div class="upcoming">
-
-            <div class="header">
-                <h4>You may like it</h4>
-                <a href="#">July <i class='bx bx-chevron-down'></i></a>
-            </div>
-
-            <div class="dates">
-                <div class="item">
-                    <h5>Mo</h5>
-                    <a href="#">12</a>
-                </div>
-                <div class="item active">
-                    <h5>Tu</h5>
-                    <a href="#">13</a>
-                </div>
-                <div class="item">
-                    <h5>We</h5>
-                    <a href="#">14</a>
-                </div>
-                <div class="item">
-                    <h5>Th</h5>
-                    <a href="#">15</a>
-                </div>
-                <div class="item">
-                    <h5>Fr</h5>
-                    <a href="#">16</a>
-                </div>
-                <div class="item">
-                    <h5>Sa</h5>
-                    <a href="#">17</a>
-                </div>
-                <div class="item">
-                    <h5>Su</h5>
-                    <a href="#">18</a>
-                </div>
-            </div>
-
-            <div class="events">
-                <div class="item">
-                    <div>
-                        <i class='bx bx-time'></i>
-                        <div class="event-info">
-                            <a href="#">Data Science</a>
-                            <p>Stoped due to learning</p>
-                        </div>
-                    </div>
-                    <i class='bx bx-dots-horizontal-rounded'></i>
-                </div>
-                <div class="item">
-                    <div>
-                        <i class='bx bx-time'></i>
-                        <div class="event-info">
-                            <a href="#">Machine Learning</a>
-                            <p>Stoped due to learning</p>
-                        </div>
-                    </div>
-                    <i class='bx bx-dots-horizontal-rounded'></i>
-                </div>
-                <div class="item">
-                    <div>
-                        <i class='bx bx-time'></i>
-                        <div class="event-info">
-                            <a href="#">Beginner Python</a>
-                            <p>Stoped due to learning</p>
-                        </div>
-                    </div>
-                    <i class='bx bx-dots-horizontal-rounded'></i>
-                </div>
-                <div class="item">
-                    <div>
-                        <i class='bx bx-time'></i>
-                        <div class="event-info">
-                            <a href="#">Introduction to SQL</a>
-                            <p>Stoped due to learning</p>
-                        </div>
-                    </div>
-                    <i class='bx bx-dots-horizontal-rounded'></i>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
-
 </body>
 
 </html>
